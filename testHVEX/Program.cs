@@ -1,6 +1,10 @@
 using testHVEX.Models;
+using testHVEX.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<HvexTestDbSettings>(builder.Configuration.GetSection(nameof(HvexTestDbSettings)));
+builder.Services.AddSingleton<TestHvexDbService>();
 
 // Add services to the container.
 
@@ -11,8 +15,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-builder.Services.Configure<TestHvexDbSettings>(
-    builder.Configuration.GetSection("TestHvex"));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -28,3 +30,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+

@@ -17,5 +17,7 @@ namespace testHVEX.Models
         [BsonElement("current")]
         public bool Current { get; set; }
 
+        [BsonElement("report")]
+        Report? Report { get; set; }
     }
 }

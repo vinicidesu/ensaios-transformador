@@ -7,5 +7,8 @@ namespace testHVEX.Models
     {
         [BsonElement("email")]
         public string Email { get; set; } = String.Empty;
+
+        [BsonElement("transformer")]
+        Transformer? Transformer { get; set; }
     }
 }

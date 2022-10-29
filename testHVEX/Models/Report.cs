@@ -6,5 +6,8 @@ namespace testHVEX.Models
     {
         [BsonElement("status")]
         public string Status { get; set; } = String.Empty;
+
+        [BsonElement("Test")]
+        Test? Test { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace testHVEX.Models
+﻿using MongoDB.Driver;
+
+namespace testHVEX.Models
 {
     public class TestHvexDbSettings
     {
